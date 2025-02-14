@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>Meu Portfólio</h1>
+    <div class="gallery">
+        <img src="imagem1.jpg" alt="Trabalho 1">
+        <img src="imagem2.jpg" alt="Trabalho 2">
+        <img src="imagem3.jpg" alt="Trabalho 3">
+        <img src="imagem4.jpg" alt="Trabalho 4">
+        <img src="imagem5.jpg" alt="Trabalho 5">
+        <img src="imagem6.jpg" alt="Trabalho 6">
+    </div>
+</body>
+</html>
