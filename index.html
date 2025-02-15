@@ -42,6 +42,12 @@
         .gallery-item:hover img {
             transform: scale(1.1);
         }
+        .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+        .gallery-item:nth-child(2) { grid-column: span 1; grid-row: span 3; }
+        .gallery-item:nth-child(3) { grid-column: span 2; grid-row: span 1; }
+        .gallery-item:nth-child(4) { grid-column: span 1; grid-row: span 2; }
+        .gallery-item:nth-child(5) { grid-column: span 3; grid-row: span 2; }
+        .gallery-item:nth-child(6) { grid-column: span 1; grid-row: span 1; }
         .modal {
             display: none;
             position: fixed;
@@ -66,7 +72,7 @@
     <h1>Meu Portfólio</h1>
     <div class="gallery">
         
-        <!-- Repeating images 10 times -->
+        <!-- Repeating images 10 times with Mondrian-style layout -->
         <script>
             const images = [
                 "Captura de Ecrã (20).png",
@@ -81,7 +87,7 @@
             for (let i = 0; i < 10; i++) {
                 images.forEach((image, index) => {
                     galleryHTML += `
-                        <div class="gallery-item" onclick="openModal('${image}')">
+                        <div class="gallery-item" style="grid-column: span ${1 + (index % 3)}; grid-row: span ${1 + ((index + i) % 2)};" onclick="openModal('${image}')">
                             <img src="${image}" alt="Trabalho ${index + 1}">
                         </div>
                     `;
