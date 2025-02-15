@@ -42,12 +42,6 @@
         .gallery-item:hover img {
             transform: scale(1.1);
         }
-        .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
-        .gallery-item:nth-child(2) { grid-column: span 1; grid-row: span 3; }
-        .gallery-item:nth-child(3) { grid-column: span 2; grid-row: span 1; }
-        .gallery-item:nth-child(4) { grid-column: span 1; grid-row: span 2; }
-        .gallery-item:nth-child(5) { grid-column: span 3; grid-row: span 2; }
-        .gallery-item:nth-child(6) { grid-column: span 1; grid-row: span 1; }
         .modal {
             display: none;
             position: fixed;
@@ -71,24 +65,31 @@
 <body>
     <h1>Meu Portfólio</h1>
     <div class="gallery">
-        <div class="gallery-item" onclick="openModal('Captura de Ecrã (20).png')">
-            <img src="Captura de Ecrã (20).png" alt="Trabalho 1">
-        </div>
-        <div class="gallery-item" onclick="openModal('Captura de Ecrã (21).png')">
-            <img src="Captura de Ecrã (21).png" alt="Trabalho 2">
-        </div>
-        <div class="gallery-item" onclick="openModal('Captura de Ecrã (22).png')">
-            <img src="Captura de Ecrã (22).png" alt="Trabalho 3">
-        </div>
-        <div class="gallery-item" onclick="openModal('Captura de Ecrã (23).png')">
-            <img src="Captura de Ecrã (23).png" alt="Trabalho 4">
-        </div>
-        <div class="gallery-item" onclick="openModal('Captura de Ecrã (24).png')">
-            <img src="Captura de Ecrã (24).png" alt="Trabalho 5">
-        </div>
-        <div class="gallery-item" onclick="openModal('Captura de Ecrã (25).png')">
-            <img src="Captura de Ecrã (25).png" alt="Trabalho 6">
-        </div>
+        
+        <!-- Repeating images 10 times -->
+        <script>
+            const images = [
+                "Captura de Ecrã (20).png",
+                "Captura de Ecrã (21).png",
+                "Captura de Ecrã (22).png",
+                "Captura de Ecrã (23).png",
+                "Captura de Ecrã (24).png",
+                "Captura de Ecrã (25).png"
+            ];
+            
+            let galleryHTML = "";
+            for (let i = 0; i < 10; i++) {
+                images.forEach((image, index) => {
+                    galleryHTML += `
+                        <div class="gallery-item" onclick="openModal('${image}')">
+                            <img src="${image}" alt="Trabalho ${index + 1}">
+                        </div>
+                    `;
+                });
+            }
+            document.write(galleryHTML);
+        </script>
+        
     </div>
     
     <div id="modal" class="modal" onclick="closeModal()">
